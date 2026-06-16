@@ -1,0 +1,223 @@
+/* Maison Prestige - Ébénisterie d'Art | Arthurbois */
+
+:root {
+  --mc-red: #C1272D;
+  --mc-red-light: #D42E4A;
+  --mc-red-hover: #A01830;
+  --mc-gray: #333333;
+  --mc-gray-light: #515151;
+  --mc-bg: #F5F4F2;
+}
+
+/* Navigation & accents */
+.nav li ul,
+.et_mobile_menu { border-color: var(--mc-red) !important; }
+
+.et_pb_widget li a:hover { color: var(--mc-red-hover) !important; }
+
+.footer-widget h4,
+#main-footer .widget_block h1,
+#main-footer .widget_block h2,
+#main-footer .widget_block h3,
+#main-footer .widget_block h4,
+#main-footer .widget_block h5,
+#main-footer .widget_block h6,
+.footer-widget li:before,
+.bottom-nav li.current-menu-item > a { color: var(--mc-red) !important; border-color: var(--mc-red) !important; }
+
+/* Navbar rouge + liens clairs (logo blanc/corail) */
+#main-header,
+#main-header .nav li ul,
+#main-header .et_mobile_menu {
+  background-color: var(--mc-red) !important;
+}
+
+#top-menu li a,
+.mobile_menu_bar:before,
+.mobile_menu_bar:after {
+  color: #fff !important;
+}
+
+#top-menu li.current-menu-ancestor > a,
+#top-menu li.current-menu-item > a {
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+#top-menu li a:hover {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Logo navbar - Maison | PRESTIGE */
+.logo_container {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.logo_container a {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+#logo {
+  max-height: 46px !important;
+  height: 46px !important;
+  width: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  position: relative !important;
+  margin: 0 !important;
+}
+
+.et_fixed_nav #logo {
+  max-height: 38px !important;
+  height: 38px !important;
+}
+
+@media (min-width: 981px) {
+  #logo {
+    max-height: 50px !important;
+    height: 50px !important;
+  }
+
+  .et_fixed_nav #logo {
+    max-height: 42px !important;
+    height: 42px !important;
+  }
+}
+
+/* Logo hero - transparent, sur l'image de fond */
+.header-logo {
+  max-width: 420px !important;
+  width: 80% !important;
+  height: auto !important;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hero - masquer le titre redondant quand le logo est affiché */
+.et_pb_fullwidth_header_0 .header-content h1.et_pb_module_header {
+  display: none;
+}
+
+/* Boutons & accents rouge */
+body #page-container .et_pb_section .et_pb_button,
+body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.et_pb_button {
+  border-color: var(--mc-red) !important;
+  background-color: var(--mc-red) !important;
+}
+
+body #page-container .et_pb_section .et_pb_button:hover,
+body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.et_pb_button:hover {
+  border-color: var(--mc-red-light) !important;
+  background-color: var(--mc-red-light) !important;
+}
+
+.et_pb_fullwidth_header_0 .et_pb_fullwidth_header_subhead {
+  color: var(--mc-gray) !important;
+  font-style: italic;
+  letter-spacing: 0.15em;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Hero : laisser l'image de fond visible, pas de fond uni */
+.et_pb_fullwidth_header.et_pb_fullwidth_header_0 {
+  background-color: transparent !important;
+}
+
+/* Signature compacte — style bandeau horizontal */
+.et_pb_section_8.et_pb_section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.et_pb_row_11,
+body #page-container .et_pb_row_11.et_pb_row {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.et_pb_section_8 .et_pb_column_20 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.mc-signature {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 6px 16px 8px !important;
+}
+
+.mc-signature .et_pb_text_inner {
+  padding: 0;
+  margin: 0;
+}
+
+.mc-signature__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.mc-signature__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.mc-signature__logo img {
+  height: 28px;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+.mc-signature__sep {
+  display: block;
+  width: 1px;
+  height: 18px;
+  background: #c8c8c8;
+  flex-shrink: 0;
+}
+
+.mc-signature__text {
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  color: #5a5a5a;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .mc-signature__inner {
+    gap: 10px;
+  }
+
+  .mc-signature__logo img {
+    height: 28px;
+  }
+
+  .mc-signature__text {
+    font-size: 12px;
+    white-space: normal;
+    max-width: 200px;
+  }
+}
