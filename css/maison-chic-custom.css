@@ -481,3 +481,105 @@ body.mc-lightbox-open {
     max-height: 58vh;
   }
 }
+
+/* Modal contact (WhatsApp / Instagram) */
+body.mc-contact-open {
+  overflow: hidden;
+}
+
+.mc-contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.mc-contact-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mc-contact-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.mc-contact-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  background: #fff;
+  border-top: 4px solid var(--mc-red);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  padding: 20px 22px 22px;
+  text-align: center;
+}
+
+.mc-contact-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: #222;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mc-contact-modal__title {
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mc-gray);
+  margin: 6px 0 14px;
+}
+
+.mc-contact-modal__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mc-contact-modal__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 2px solid #e8e8e8;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.mc-contact-modal__action:hover {
+  transform: translateY(-1px);
+  border-color: #cfcfcf;
+}
+
+.mc-contact-modal__icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.mc-contact-modal__hint {
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin: 14px 0 0;
+}
+
+.mc-contact-trigger {
+  cursor: pointer;
+}
