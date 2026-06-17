@@ -45,26 +45,20 @@
     btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'mc-theme-toggle';
-    btn.setAttribute('aria-label', 'Changer le mode d affichage');
+    btn.setAttribute('aria-label', 'Changer le mode d\'affichage');
     btn.innerHTML =
       '<span class="mc-theme-toggle__icon mc-theme-toggle__icon--sun" aria-hidden="true">&#9728;</span>' +
       '<span class="mc-theme-toggle__icon mc-theme-toggle__icon--moon" aria-hidden="true">&#9790;</span>';
-
     btn.addEventListener('click', onToggleClick, true);
 
-    const header = document.getElementById('main-header');
-    if (header) {
-      header.appendChild(btn);
+    const nav = document.getElementById('et-top-navigation');
+    const mobileMenu = document.getElementById('et_mobile_nav_menu');
+    if (nav && mobileMenu) {
+      nav.insertBefore(btn, mobileMenu);
     } else {
-      const nav = document.getElementById('et-top-navigation');
-      const mobileMenu = document.getElementById('et_mobile_nav_menu');
-      if (nav && mobileMenu) {
-        nav.insertBefore(btn, mobileMenu);
-      } else if (nav) {
-        nav.appendChild(btn);
-      } else {
-        document.body.appendChild(btn);
-      }
+      const header = document.getElementById('main-header');
+      if (header) header.appendChild(btn);
+      else document.body.appendChild(btn);
     }
 
     updateButton(btn);
@@ -74,11 +68,8 @@
   const init = () => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === 'dark') {
-        applyTheme('dark');
-      } else if (saved === 'light') {
-        applyTheme('light');
-      }
+      if (saved === 'dark') applyTheme('dark');
+      else if (saved === 'light') applyTheme('light');
     } catch (e) {
       /* ignore */
     }
@@ -90,6 +81,5 @@
   } else {
     init();
   }
-
   window.addEventListener('load', init);
 })();
