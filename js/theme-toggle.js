@@ -1,51 +1,95 @@
 (() => {
-  const storageKey = 'mc-theme';
+  const STORAGE_KEY = 'mc-theme';
   const root = document.documentElement;
+  const body = document.body;
 
-  const getTheme = () => (root.classList.contains('mc-theme-dark') ? 'dark' : 'light');
+  const getTheme = () =>
+    root.classList.contains('mc-theme-dark') ? 'dark' : 'light';
 
-  const setTheme = (theme) => {
-    const isDark = theme === 'dark';
-    root.classList.toggle('mc-theme-dark', isDark);
-    try {
-      localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
-    } catch (e) {
-      /* ignore */
-    }
-    updateButton();
-  };
-
-  const nav = document.getElementById('et-top-navigation');
-  if (!nav) return;
-
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'mc-theme-toggle';
-  btn.setAttribute('aria-label', 'Changer le mode d\'affichage');
-  btn.innerHTML =
-    '<span class="mc-theme-toggle__icon mc-theme-toggle__icon--sun" aria-hidden="true">☀</span>' +
-    '<span class="mc-theme-toggle__icon mc-theme-toggle__icon--moon" aria-hidden="true">☾</span>';
-
-  const mobileMenu = document.getElementById('et_mobile_nav_menu');
-  if (mobileMenu) {
-    nav.insertBefore(btn, mobileMenu);
-  } else {
-    nav.appendChild(btn);
-  }
-
-  function updateButton() {
+  const updateButton = (btn) => {
+    if (!btn) return;
     const dark = getTheme() === 'dark';
+    btn.classList.toggle('is-dark', dark);
     btn.setAttribute(
       'aria-label',
       dark ? 'Activer le mode clair' : 'Activer le mode sombre'
     );
     btn.setAttribute('title', dark ? 'Mode clair' : 'Mode sombre');
-    btn.classList.toggle('is-dark', dark);
+  };
+
+  const applyTheme = (theme) => {
+    const dark = theme === 'dark';
+    root.classList.toggle('mc-theme-dark', dark);
+    body.classList.toggle('mc-theme-dark', dark);
+    try {
+      localStorage.setItem(STORAGE_KEY, dark ? 'dark' : 'light');
+    } catch (e) {
+      /* ignore */
+    }
+    updateButton(document.querySelector('.mc-theme-toggle'));
+  };
+
+  const onToggleClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    applyTheme(getTheme() === 'dark' ? 'light' : 'dark');
+  };
+
+  const createToggle = () => {
+    let btn = document.querySelector('.mc-theme-toggle');
+    if (btn) {
+      updateButton(btn);
+      return btn;
+    }
+
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mc-theme-toggle';
+    btn.setAttribute('aria-label', 'Changer le mode d affichage');
+    btn.innerHTML =
+      '<span class="mc-theme-toggle__icon mc-theme-toggle__icon--sun" aria-hidden="true">&#9728;</span>' +
+      '<span class="mc-theme-toggle__icon mc-theme-toggle__icon--moon" aria-hidden="true">&#9790;</span>';
+
+    btn.addEventListener('click', onToggleClick, true);
+
+    const header = document.getElementById('main-header');
+    if (header) {
+      header.appendChild(btn);
+    } else {
+      const nav = document.getElementById('et-top-navigation');
+      const mobileMenu = document.getElementById('et_mobile_nav_menu');
+      if (nav && mobileMenu) {
+        nav.insertBefore(btn, mobileMenu);
+      } else if (nav) {
+        nav.appendChild(btn);
+      } else {
+        document.body.appendChild(btn);
+      }
+    }
+
+    updateButton(btn);
+    return btn;
+  };
+
+  const init = () => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'dark') {
+        applyTheme('dark');
+      } else if (saved === 'light') {
+        applyTheme('light');
+      }
+    } catch (e) {
+      /* ignore */
+    }
+    createToggle();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 
-  btn.addEventListener('click', () => {
-    setTheme(getTheme() === 'dark' ? 'light' : 'dark');
-  });
-
-  updateButton();
+  window.addEventListener('load', init);
 })();
