@@ -1,84 +1,178 @@
 /* Chargé en dernier — priorité sur les styles Divi inline */
 
+@media (max-width: 980px) {
+  #main-header .container.et_menu_container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 66px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #main-header .logo_container {
+    float: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 8px 0 !important;
+  }
+
+  #main-header .logo_helper {
+    display: none !important;
+  }
+
+  #main-header .logo_container a {
+    display: flex !important;
+    align-items: center !important;
+    line-height: 0 !important;
+  }
+
+  #main-header #et-top-navigation {
+    float: none !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  #main-header #logo {
+    max-height: 40px !important;
+    height: auto !important;
+    width: auto !important;
+    max-width: min(200px, 50vw) !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+  }
+}
+
 @media (max-width: 767px) {
+  body #page-container #accueil.et_pb_section_0,
+  body #page-container .et_pb_section_0.et_pb_fullwidth_section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
   body #page-container .et_pb_fullscreen .et_pb_fullwidth_header_container,
-  body #page-container .et_pb_fullwidth_header_0.et_pb_fullscreen .et_pb_fullwidth_header_container {
+  body #page-container .et_pb_fullwidth_header_0.et_pb_fullscreen .et_pb_fullwidth_header_container,
+  body #page-container .et_pb_fullwidth_header .et_pb_fullwidth_header_container.center {
     min-height: 0 !important;
     height: auto !important;
-    width: 92% !important;
-    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
   }
 
   body #page-container .et_pb_fullwidth_header.et_pb_fullwidth_header_0.et_pb_fullscreen {
     min-height: 0 !important;
     height: auto !important;
-    padding: 66px 0 0 !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   body #page-container .et_pb_fullwidth_header_0 {
-    padding-top: 66px !important;
+    padding-top: 72px !important;
     padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
+  body #page-container .et_pb_fullwidth_header_0 .header-content-container.center,
   body #page-container .et_pb_fullwidth_header_0 .header-content-container,
   body #page-container .et_pb_fullwidth_header_0 .header-content {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 12px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 8px !important;
+    text-align: center !important;
+    gap: 10px !important;
+    flex: 0 0 auto !important;
+    align-self: center !important;
   }
 
   body #page-container .et_pb_fullwidth_header_0 .header-logo {
-    max-width: min(280px, 88vw) !important;
+    display: block !important;
+    max-width: min(240px, 78vw) !important;
     width: auto !important;
     height: auto !important;
-    margin: 0 auto 8px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    object-position: center center !important;
   }
 
   body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_subhead {
+    display: block !important;
+    width: 100% !important;
+    max-width: 300px !important;
     font-size: 15px !important;
     line-height: 1.45 !important;
     letter-spacing: 0.02em !important;
-    max-width: 300px !important;
-    margin: 6px auto 0 !important;
-    padding: 0 6px !important;
+    margin: 4px auto 0 !important;
+    padding: 0 8px !important;
+    text-align: center !important;
     white-space: normal !important;
     word-break: normal !important;
     overflow-wrap: break-word !important;
   }
 
+  body #page-container .et_pb_fullwidth_header_0 .et_pb_header_content_wrapper {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.et_pb_button {
-    margin-top: 28px !important;
-    margin-bottom: 10px !important;
+    display: inline-block !important;
+    align-self: center !important;
+    margin: 20px auto 8px !important;
     font-size: 12px !important;
     letter-spacing: 2px !important;
-    padding: 10px 16px !important;
+    padding: 10px 18px !important;
     white-space: nowrap !important;
+    text-align: center !important;
   }
 
   body #page-container #service.et_pb_section_1.et_pb_section,
   body #page-container .et_pb_section_1.et_pb_section {
-    padding-top: 32px !important;
+    padding-top: 24px !important;
+    margin-top: 0 !important;
   }
 
   body #page-container .et_pb_section_1.section_has_divider.et_pb_top_divider .et_pb_top_inside_divider {
-    height: 44px !important;
-    background-size: 100% 44px !important;
+    height: 40px !important;
+    background-size: 100% 40px !important;
   }
 
   #main-header > .container {
     padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-right: 10px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body #page-container .et_pb_fullwidth_header_0 .header-logo {
+    max-width: min(210px, 82vw) !important;
+  }
+
+  body #page-container .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_subhead {
+    font-size: 14px !important;
+    max-width: 270px !important;
   }
 
   #main-header #logo {
-    max-height: 42px !important;
-    height: auto !important;
-    max-width: min(210px, 52vw) !important;
-    width: auto !important;
+    max-width: min(175px, 48vw) !important;
+    max-height: 36px !important;
   }
 }
