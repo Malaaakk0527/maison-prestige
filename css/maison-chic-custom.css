@@ -89,6 +89,56 @@
   }
 }
 
+/* Logos agrandis sur mobile */
+@media (max-width: 980px) {
+  #logo {
+    max-height: 64px !important;
+    height: 64px !important;
+    max-width: min(78vw, 300px) !important;
+  }
+
+  .et_fixed_nav #logo {
+    max-height: 56px !important;
+    height: 56px !important;
+  }
+
+  .logo_container {
+    max-width: 78% !important;
+  }
+
+  #main-header .container {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .et_fixed_nav.et_show_nav #page-container {
+    padding-top: 92px !important;
+  }
+
+  .header-logo {
+    max-width: min(560px, 96vw) !important;
+    width: 96% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #logo {
+    max-height: 58px !important;
+    height: 58px !important;
+    max-width: min(74vw, 260px) !important;
+  }
+
+  .et_fixed_nav #logo {
+    max-height: 52px !important;
+    height: 52px !important;
+  }
+
+  .header-logo {
+    max-width: 98vw !important;
+    width: 98% !important;
+  }
+}
+
 /* Logo hero - transparent, sur l'image de fond */
 .header-logo {
   max-width: 420px !important;
