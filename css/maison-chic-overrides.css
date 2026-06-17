@@ -55,32 +55,65 @@ body #page-container .et_pb_fullwidth_header_0 .header-content-container {
 
 @media (min-width: 981px) {
   #main-header #top-menu-nav {
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    float: none !important;
+  }
+
+  #main-header #top-menu {
+    display: flex !important;
+    align-items: center !important;
+    float: none !important;
   }
 
   #main-header #et_mobile_nav_menu {
     display: none !important;
   }
 
-  /* Restaurer la hauteur navbar desktop (Divi par défaut) */
-  .et_header_style_left #main-header #et-top-navigation {
-    padding-top: 33px !important;
-  }
-
-  .et_header_style_left #main-header #et-top-navigation nav > ul > li > a {
-    padding-bottom: 33px !important;
-  }
-
+  /* Navbar desktop : tout centré verticalement */
   .et_header_style_left #main-header .container.et_menu_container {
+    display: flex !important;
+    align-items: center !important;
     min-height: 80px !important;
   }
 
+  .et_header_style_left #main-header .logo_container {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .et_header_style_left #main-header #et-top-navigation {
+    display: flex !important;
+    align-items: center !important;
+    align-self: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+    gap: 12px !important;
+  }
+
+  .et_header_style_left #main-header #et-top-navigation nav > ul > li > a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  #et-top-navigation .mc-theme-toggle {
+    align-self: center !important;
+    margin: 0 0 0 4px !important;
+    vertical-align: middle !important;
+  }
+
+  .et_fixed_nav #main-header.et-fixed-header .container.et_menu_container {
+    min-height: 60px !important;
+  }
+
   .et_fixed_nav #main-header.et-fixed-header #et-top-navigation {
-    padding-top: 20px !important;
+    padding-top: 0 !important;
   }
 
   .et_fixed_nav #main-header.et-fixed-header #et-top-navigation nav > ul > li > a {
-    padding-bottom: 20px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
   }
 }
 
