@@ -126,6 +126,32 @@ body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.
   text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8);
 }
 
+/* Tagline hero — 2 lignes max sur mobile */
+.mc-hero-tagline__br {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_subhead {
+    font-size: clamp(14px, 3.9vw, 19px) !important;
+    letter-spacing: 0.05em !important;
+    line-height: 1.4 !important;
+    max-width: min(360px, 94vw);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+    hyphens: none;
+  }
+
+  .et_pb_fullwidth_header_0 .mc-hero-tagline {
+    max-width: min(320px, 92vw);
+  }
+
+  .mc-hero-tagline__br {
+    display: block;
+  }
+}
+
 /* Hero : laisser l'image de fond visible, pas de fond uni */
 .et_pb_fullwidth_header.et_pb_fullwidth_header_0 {
   background-color: transparent !important;
