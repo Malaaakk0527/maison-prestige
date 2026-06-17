@@ -616,16 +616,21 @@ body.mc-contact-open {
 }
 
 @media (max-width: 767px) {
+  #accueil.et_pb_section_0 {
+    padding-bottom: 0 !important;
+  }
+
   .et_pb_fullwidth_header.et_pb_fullwidth_header_0.et_pb_fullscreen {
-    min-height: auto !important;
-    padding: 72px 0 28px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 68px 0 6px !important;
   }
 
   .et_pb_fullwidth_header_0.et_pb_fullscreen .et_pb_fullwidth_header_container {
-    min-height: auto !important;
+    min-height: 0 !important;
     height: auto !important;
     width: 92% !important;
-    padding: 16px 0 !important;
+    padding: 8px 0 0 !important;
   }
 
   .et_pb_fullwidth_header_0 .header-content-container,
@@ -636,8 +641,8 @@ body.mc-contact-open {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
     flex: 0 0 auto !important;
   }
 
@@ -653,7 +658,7 @@ body.mc-contact-open {
     line-height: 1.45 !important;
     letter-spacing: 0.02em !important;
     max-width: 290px !important;
-    margin: 6px auto 10px !important;
+    margin: 6px auto 0 !important;
     padding: 0 6px !important;
     white-space: normal !important;
     word-break: normal !important;
@@ -665,8 +670,19 @@ body.mc-contact-open {
     font-size: 12px !important;
     letter-spacing: 2px !important;
     padding: 10px 16px !important;
-    margin-top: 4px !important;
+    margin-top: 22px !important;
+    margin-bottom: 0 !important;
     white-space: nowrap !important;
+  }
+
+  /* Rapprocher la section suivante du bouton */
+  .et_pb_section_1.et_pb_section {
+    padding-top: 52px !important;
+  }
+
+  .et_pb_section_1.section_has_divider.et_pb_top_divider .et_pb_top_inside_divider {
+    height: 56px !important;
+    background-size: 100% 56px !important;
   }
 }
 
