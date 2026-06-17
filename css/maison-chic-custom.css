@@ -1,9 +1,9 @@
 /* Maison Prestige - Atelier de création sur mesure | Arthurbois */
 
 :root {
-  --mc-red: #008B8B;
-  --mc-red-light: #00A8A3;
-  --mc-red-hover: #006B6B;
+  --mc-red: #6B4423;
+  --mc-red-light: #8B5E34;
+  --mc-red-hover: #4E2F14;
   --mc-gray: #333333;
   --mc-gray-light: #515151;
   --mc-bg: #F5F4F2;
@@ -25,7 +25,7 @@
 .footer-widget li:before,
 .bottom-nav li.current-menu-item > a { color: var(--mc-red) !important; border-color: var(--mc-red) !important; }
 
-/* Navbar bleu sarcelle + liens clairs */
+/* Navbar marron + liens clairs (logo blanc/corail) */
 #main-header,
 #main-header .nav li ul,
 #main-header .et_mobile_menu {
@@ -89,46 +89,6 @@
   }
 }
 
-/* Logos agrandis sur mobile */
-@media (max-width: 980px) {
-  #logo {
-    max-height: 64px !important;
-    height: 64px !important;
-    max-width: min(78vw, 300px) !important;
-  }
-
-  .et_fixed_nav #logo {
-    max-height: 56px !important;
-    height: 56px !important;
-  }
-
-  .logo_container {
-    max-width: 78% !important;
-  }
-
-  #main-header .container {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-  }
-
-  .et_fixed_nav.et_show_nav #page-container {
-    padding-top: 92px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  #logo {
-    max-height: 58px !important;
-    height: 58px !important;
-    max-width: min(74vw, 260px) !important;
-  }
-
-  .et_fixed_nav #logo {
-    max-height: 52px !important;
-    height: 52px !important;
-  }
-}
-
 /* Logo hero - transparent, sur l'image de fond */
 .header-logo {
   max-width: 420px !important;
@@ -141,57 +101,12 @@
   margin: 0 auto;
 }
 
-/* Logo central du hero — plus grand sur mobile */
-@media (max-width: 980px) {
-  .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container,
-  .et_pb_fullscreen .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
-    width: 94% !important;
-    max-width: none !important;
-  }
-
-  .et_pb_fullwidth_header_0 .header-content-container,
-  .et_pb_fullwidth_header_0 .header-content {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .et_pb_fullwidth_header_0 .header-logo,
-  .et_pb_fullwidth_header_0 img.header-logo {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container,
-  .et_pb_fullscreen .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_container {
-    width: 98% !important;
-  }
-
-  .et_pb_fullwidth_header_0 .header-logo,
-  .et_pb_fullwidth_header_0 img.header-logo {
-    max-width: min(680px, 98vw) !important;
-    width: 98vw !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .et_pb_fullwidth_header_0 .header-logo,
-  .et_pb_fullwidth_header_0 img.header-logo {
-    max-width: 100vw !important;
-    width: 100vw !important;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-}
-
 /* Hero - masquer le titre redondant quand le logo est affiché */
 .et_pb_fullwidth_header_0 .header-content h1.et_pb_module_header {
   display: none;
 }
 
-/* Boutons & accents bleu sarcelle */
+/* Boutons & accents marron */
 body #page-container .et_pb_section .et_pb_button,
 body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.et_pb_button {
   border-color: var(--mc-red) !important;
@@ -209,32 +124,6 @@ body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.
   font-style: italic;
   letter-spacing: 0.15em;
   text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8);
-}
-
-/* Tagline hero — 2 lignes max sur mobile */
-.mc-hero-tagline__br {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .et_pb_fullwidth_header_0 .et_pb_fullwidth_header_subhead {
-    font-size: clamp(14px, 3.9vw, 19px) !important;
-    letter-spacing: 0.05em !important;
-    line-height: 1.4 !important;
-    max-width: min(360px, 94vw);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
-    hyphens: none;
-  }
-
-  .et_pb_fullwidth_header_0 .mc-hero-tagline {
-    max-width: min(320px, 92vw);
-  }
-
-  .mc-hero-tagline__br {
-    display: block;
-  }
 }
 
 /* Hero : laisser l'image de fond visible, pas de fond uni */
