@@ -1,9 +1,9 @@
 /* Maison Prestige - Atelier de création sur mesure | Arthurbois */
 
 :root {
-  --mc-red: #6B4423;
-  --mc-red-light: #8B5E34;
-  --mc-red-hover: #4E2F14;
+  --mc-red: #008B8B;
+  --mc-red-light: #00A8A3;
+  --mc-red-hover: #006B6B;
   --mc-gray: #333333;
   --mc-gray-light: #515151;
   --mc-bg: #F5F4F2;
@@ -25,7 +25,7 @@
 .footer-widget li:before,
 .bottom-nav li.current-menu-item > a { color: var(--mc-red) !important; border-color: var(--mc-red) !important; }
 
-/* Navbar marron + liens clairs (logo blanc/corail) */
+/* Navbar bleu sarcelle + liens clairs */
 #main-header,
 #main-header .nav li ul,
 #main-header .et_mobile_menu {
@@ -106,7 +106,7 @@
   display: none;
 }
 
-/* Boutons & accents marron */
+/* Boutons & accents bleu sarcelle */
 body #page-container .et_pb_section .et_pb_button,
 body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_one.et_pb_button {
   border-color: var(--mc-red) !important;
