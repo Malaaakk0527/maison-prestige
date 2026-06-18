@@ -721,16 +721,23 @@ html.mc-theme-dark .mc-category-card__content span {
 .mc-translate-container {
   display: inline-flex;
   align-items: center;
-  margin-right: 8px;
+  justify-content: center;
   position: relative;
   z-index: 1000000;
   align-self: center;
+  height: 34px !important;
 }
 
-#google_translate_element {
-  height: 36px;
-  display: flex;
-  align-items: center;
+/* Align nested Google Translate wrapper divs perfectly */
+#google_translate_element,
+.goog-te-gadget,
+.goog-te-gadget > div {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
 }
 
 /* Hide Google branding logo and text */
@@ -754,13 +761,13 @@ html.mc-theme-dark .mc-category-card__content span {
   font-family: 'Nunito', Helvetica, Arial, sans-serif !important;
   font-size: 13px !important;
   font-weight: 600 !important;
-  padding: 5px 24px 5px 12px !important;
+  padding: 0 24px 0 12px !important;
   border-radius: 20px !important;
   outline: none !important;
   cursor: pointer !important;
   transition: background 0.2s ease, border-color 0.2s ease !important;
-  height: 32px !important;
-  line-height: 1 !important;
+  height: 34px !important;
+  line-height: 34px !important;
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
@@ -778,6 +785,8 @@ html.mc-theme-dark .mc-category-card__content span {
   color: #fff;
   position: absolute;
   right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -816,17 +825,34 @@ html.mc-theme-dark .goog-te-combo option {
   color: #f2f2f2 !important;
 }
 
-/* Mobile responsive alignment */
+/* Spacing and layout adjustments */
+@media (min-width: 981px) {
+  .mc-translate-container {
+    margin-left: 16px !important;
+    margin-right: 8px !important;
+  }
+}
+
 @media (max-width: 980px) {
   .mc-translate-container {
-    margin-right: 4px;
+    margin-left: 4px !important;
+    margin-right: 6px !important;
+    height: 32px !important;
   }
+  
   .goog-te-combo {
-    height: 30px !important;
+    height: 32px !important;
+    line-height: 32px !important;
     font-size: 12px !important;
-    padding: 4px 22px 4px 10px !important;
+    padding: 0 20px 0 10px !important;
+    max-width: 85px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
+  
   .mc-translate-container::after {
-    right: 8px;
+    right: 8px !important;
+    font-size: 7px !important;
   }
 }
