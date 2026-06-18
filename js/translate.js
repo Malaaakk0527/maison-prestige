@@ -4,7 +4,6 @@
     new google.translate.TranslateElement({
       pageLanguage: 'fr',
       includedLanguages: 'ar,fr',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
       autoDisplay: false
     }, 'google_translate_element');
   };
@@ -51,7 +50,7 @@
     // Load Google Translate script
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.body.appendChild(script);
 
     // Watch for when Google Translate adds the bar at the top, and hide it

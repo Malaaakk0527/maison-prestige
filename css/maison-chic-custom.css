@@ -749,9 +749,9 @@ html.mc-theme-dark .mc-category-card__content span {
 
 /* Style the select box */
 .goog-te-combo {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: #fff !important;
+  background: rgba(0, 128, 128, 0.05) !important;
+  border: 1px solid rgba(0, 128, 128, 0.3) !important;
+  color: #008080 !important;
   font-family: 'Nunito', Helvetica, Arial, sans-serif !important;
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -768,6 +768,18 @@ html.mc-theme-dark .mc-category-card__content span {
 }
 
 .goog-te-combo:hover {
+  background: rgba(0, 128, 128, 0.1) !important;
+  border-color: rgba(0, 128, 128, 0.6) !important;
+}
+
+/* Dark mode select box styling */
+html.mc-theme-dark .goog-te-combo {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #fff !important;
+}
+
+html.mc-theme-dark .goog-te-combo:hover {
   background: rgba(255, 255, 255, 0.25) !important;
   border-color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -776,10 +788,14 @@ html.mc-theme-dark .mc-category-card__content span {
 .mc-translate-container::after {
   content: '▼';
   font-size: 8px;
-  color: #fff;
+  color: #008080;
   position: absolute;
   right: 12px;
   pointer-events: none;
+}
+
+html.mc-theme-dark .mc-translate-container::after {
+  color: #fff;
 }
 
 /* Specific styling for the select options to make them readable */
