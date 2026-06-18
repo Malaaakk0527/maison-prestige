@@ -735,8 +735,7 @@ html.mc-theme-dark .mc-category-card__content span {
 
 /* Hide Google branding logo and text */
 .goog-logo-link, 
-.goog-te-gadget span,
-.goog-te-gadget div {
+.goog-te-gadget span {
   display: none !important;
 }
 
