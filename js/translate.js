@@ -8,20 +8,33 @@
     }, 'google_translate_element');
   };
 
+  let observer = null;
+
   const customizeSelect = () => {
     const select = document.querySelector('.goog-te-combo');
     if (!select) return;
+
+    // Temporarily disconnect observer to avoid infinite loops during DOM modification
+    if (observer) {
+      observer.disconnect();
+    }
 
     const options = select.options;
     for (let i = 0; i < options.length; i++) {
       const opt = options[i];
       if (opt.value === '') {
-        opt.textContent = 'FR';
+        if (opt.textContent !== 'FR') opt.textContent = 'FR';
       } else if (opt.value === 'fr') {
-        opt.textContent = 'FR';
+        if (opt.textContent !== 'FR') opt.textContent = 'FR';
       } else if (opt.value === 'ar') {
-        opt.textContent = 'AR';
+        if (opt.textContent !== 'AR') opt.textContent = 'AR';
       }
+    }
+
+    // Reconnect observer
+    const targetNode = document.getElementById('google_translate_element');
+    if (targetNode && observer) {
+      observer.observe(targetNode, { childList: true, subtree: true });
     }
   };
 
@@ -32,7 +45,7 @@
     // Run once initially in case it's already rendered
     customizeSelect();
 
-    const observer = new MutationObserver(() => {
+    observer = new MutationObserver(() => {
       customizeSelect();
     });
 
