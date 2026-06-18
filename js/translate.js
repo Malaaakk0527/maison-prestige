@@ -8,6 +8,44 @@
     }, 'google_translate_element');
   };
 
+  const customizeSelect = () => {
+    const select = document.querySelector('.goog-te-combo');
+    if (!select) return;
+
+    const options = select.options;
+    for (let i = 0; i < options.length; i++) {
+      const opt = options[i];
+      if (opt.value === '') {
+        opt.textContent = 'FR';
+      } else if (opt.value === 'fr') {
+        opt.textContent = 'FR';
+      } else if (opt.value === 'ar') {
+        opt.textContent = 'AR';
+      }
+    }
+  };
+
+  const startObserver = () => {
+    const targetNode = document.getElementById('google_translate_element');
+    if (!targetNode) return;
+
+    // Run once initially in case it's already rendered
+    customizeSelect();
+
+    const observer = new MutationObserver(() => {
+      customizeSelect();
+    });
+
+    observer.observe(targetNode, { childList: true, subtree: true });
+    
+    // Also watch for user selecting a language to re-run customization
+    targetNode.addEventListener('change', (e) => {
+      if (e.target && e.target.classList.contains('goog-te-combo')) {
+        setTimeout(customizeSelect, 50);
+      }
+    }, true);
+  };
+
   const init = () => {
     // Check if element already exists
     if (document.querySelector('.mc-translate-container')) return;
@@ -52,6 +90,9 @@
     script.type = 'text/javascript';
     script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.body.appendChild(script);
+
+    // Start observing translation element for customization
+    startObserver();
 
     // Watch for when Google Translate adds the bar at the top, and hide it
     const style = document.createElement('style');
